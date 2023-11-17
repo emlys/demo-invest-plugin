@@ -13,3 +13,6 @@ dependencies = [
     "taskgraph",
     "natcap.invest"
 ]
+
+[tool.natcap.invest]
+api_version = "0.0.1"
