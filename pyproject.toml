@@ -8,7 +8,7 @@ where = ["src"]
 [project]
 name = "foo-model"
 version = "0.0.1"
-dependencies = ["taskgraph", "pygeoprocessing", "natcap.invest"]
+dependencies = ["taskgraph", "pygeoprocessing", "git+https://github.com/natcap/invest.git@main"]
 
 [tool.natcap.invest]
 api_version = "0.0.1"
