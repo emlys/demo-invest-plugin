@@ -59,6 +59,13 @@ _OUTPUT_BASE_FILES = {
     'result': 'result.tif',
 }
 
+def multiply_op(raster_path, factor, target_path):
+    pygeoprocessing.raster_map(
+        op=lambda x: x * factor,
+        rasters=[raster_path],
+        target_path=target_path)
+
+
 def execute(args):
     file_suffix = utils.make_suffix_string(args, 'results_suffix')
     output_dir = args['workspace_dir']
@@ -72,10 +79,10 @@ def execute(args):
     graph = taskgraph.TaskGraph(output_dir, args['n_workers'])
 
     graph.add_task(
-        func=pygeoprocessing.raster_map,
+        func=multiply_op,
         kwargs={
-            'op': lambda x: x * int(args['factor']),
-            'rasters': [args['raster_path']],
+            'raster_path': args['raster_path'],
+            'factor': int(args['factor']),
             'target_path': file_registry['result']
         },
         target_path_list=[file_registry['result']],
