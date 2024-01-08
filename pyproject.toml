@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
@@ -8,8 +8,7 @@ where = ["src"]
 [project]
 name = "foo-model"
 version = "0.0.1"
-dependencies = [
-    "pygeoprocessing>=2.4.1",
-    "taskgraph",
-    "natcap.invest"
-]
+dependencies = ["taskgraph", "pygeoprocessing"]
+
+[tool.natcap.invest]
+api_version = "0.0.1"
