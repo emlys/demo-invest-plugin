@@ -1,21 +1,21 @@
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+# [build-system]
+# requires = ["setuptools", "wheel"]
+# build-backend = "setuptools.build_meta"
 
-[tool.setuptools.package-data]
-foo = ["data/foo"]
+# [tool.setuptools.package-data]
+# foo = ["data/foo"]
 
-[tool.setuptools.packages.find]
-where = ["src"]
+# [tool.setuptools.packages.find]
+# where = ["src"]
 
-[project]
-name = "foo-model"
-version = "0.0.1"
-dependencies = ["taskgraph", "pygeoprocessing", "natcap.invest @ git+https://github.com/natcap/invest.git@feature/plugins"]
+# [project]
+# name = "foo-model"
+# version = "0.0.1"
+# dependencies = ["taskgraph", "pygeoprocessing", "natcap.invest @ git+https://github.com/natcap/invest.git@feature/plugins"]
 
-[tool.natcap.invest]
-api_version = "0.0.1"
-model_name = "Foo Model"  # user-facing name
-pyname = "natcap.invest.foo"  # importable name
-model_id = "foo"  # model identifier used internally
-conda_dependencies = ["python<3.12", "gdal<3.6"] # to install into the plugin's conda env (not available thru pip)
+# [tool.natcap.invest]
+# api_version = "0.0.1"
+# model_name = "Foo Model"  # user-facing name
+# pyname = "natcap.invest.foo"  # importable name
+# model_id = "foo"  # model identifier used internally
+# conda_dependencies = ["python<3.12", "gdal<3.6"] # to install into the plugin's conda env (not available thru pip)
