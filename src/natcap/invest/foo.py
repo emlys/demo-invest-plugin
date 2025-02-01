@@ -14,7 +14,7 @@ LOGGER = logging.getLogger(__name__)
 
 MODEL_SPEC = {
     "model_id": "foo",
-    "model_name": gettext("Foo Model"),
+    "model_title": gettext("Foo Model"),
     "pyname": "natcap.invest.foo",
     "userguide": "foo.html",
     "aliases": (),
