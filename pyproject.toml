@@ -9,7 +9,7 @@ foo = ["data/foo"]
 where = ["src"]
 
 [project]
-name = "foo-model"
+name = "invest-foo"
 version = "0.0.1"
 dependencies = ["taskgraph", "pygeoprocessing", "natcap.invest @ git+https://github.com/natcap/invest.git@feature/plugins"]
 
