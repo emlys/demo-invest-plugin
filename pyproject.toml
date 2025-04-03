@@ -16,7 +16,7 @@ dependencies = ["taskgraph", "pygeoprocessing", "natcap.invest @ git+https://git
 [tool.natcap.invest]
 api_version = "0.0.1"
 model_title = "Foo Model"  # user-facing name
-pyname = "natcap.invest.foo"  # importable name
+pyname = "invest-foo"  # importable name
 model_id = "foo"  # model identifier used internally
 conda_dependencies = [ # to install into the plugin's conda env (not available thru pip)
   "python<3.12", 
