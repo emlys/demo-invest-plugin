@@ -5,18 +5,15 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools.package-data]
 foo = ["data/foo"]
 
-[tool.setuptools]
-py-modules = ["invest-foo"]
-
 [project]
-name = "invest-foo"
+name = "invest-demo-plugin"
 version = "0.0.1"
 dependencies = ["taskgraph", "pygeoprocessing", "natcap.invest @ git+https://github.com/natcap/invest.git@feature/plugins"]
 
 [tool.natcap.invest]
-api_version = "0.0.1"
-model_title = "Foo Model"  # user-facing name
-model_id = "foo"  # model identifier used internally
+api_version = "v1"
+model_title = "Demo Model"  # user-facing name
+model_id = "demo"  # model identifier used internally
 conda_dependencies = [ # to install into the plugin's conda env (not available thru pip)
   "python<3.12", 
   "gdal", 
