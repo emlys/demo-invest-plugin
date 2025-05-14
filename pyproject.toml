@@ -5,7 +5,11 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "invest-demo-plugin"
 version = "0.0.1"
-dependencies = ["taskgraph", "pygeoprocessing", "natcap.invest @ git+https://github.com/natcap/invest.git@feature/plugins"]
+dependencies = [
+  "taskgraph", 
+  "pygeoprocessing", 
+  # "natcap.invest @ git+https://github.com/natcap/invest.git@feature/plugins"
+]
 
 [tool.natcap.invest]
 # This is the plugin API version that this plugin uses
