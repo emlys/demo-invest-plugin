@@ -17,6 +17,8 @@ dependencies = [
 # "v1" is the current and only version at this time
 api_version = "v1"
 
+package_name = "invest_demo_plugin"
+
 # User-facing name of the plugin model that will be displayed in the workbench
 # Style guidelines:
 # - Capitalize using title case
