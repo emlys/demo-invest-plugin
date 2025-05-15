@@ -16,6 +16,7 @@ LOGGER = logging.getLogger(__name__)
 MODEL_SPEC = spec.ModelSpec(
     model_id="foo",
     model_title=gettext("Foo Model"),
+    userguide='',
     input_field_order=[
         ['workspace_dir', 'results_suffix'],
         ['raster_path', 'factor']],
