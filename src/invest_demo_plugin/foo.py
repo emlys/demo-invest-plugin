@@ -29,7 +29,7 @@ MODEL_SPEC = spec.ModelSpec(
                 "exists in the folder, it will be overwritten."),
             contents={},
             must_exist=False,
-            permission="rwx"
+            permissions="rwx"
         ),
         spec.StringInput(
             id="results_suffix",
