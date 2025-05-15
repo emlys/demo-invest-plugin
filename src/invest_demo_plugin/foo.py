@@ -74,7 +74,7 @@ MODEL_SPEC = spec.ModelSpec(
             units=None
         )
     ]
-}
+)
 
 _OUTPUT_BASE_FILES = {
     'result': 'result.tif',
