@@ -62,8 +62,7 @@ MODEL_SPEC = spec.ModelSpec(
         ),
         spec.IntegerInput(
             id="factor",
-            name="Multiplication Factor",
-            expression="value < 10"
+            name="Multiplication Factor"
         )
     ],
     outputs=[
