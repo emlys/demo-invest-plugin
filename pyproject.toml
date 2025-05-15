@@ -6,8 +6,8 @@ build-backend = "setuptools.build_meta"
 name = "invest-demo-plugin"
 version = "0.0.1"
 dependencies = [
-  "taskgraph", 
   "pygeoprocessing", 
+  "taskgraph@git+https://github.com/natcap/taskgraph.git@main",
   # "natcap.invest @ git+https://github.com/natcap/invest.git@feature/plugins"
 ]
 
