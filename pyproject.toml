@@ -44,7 +44,7 @@ model_id = "demo"
 # Python is installed into the plugin environment by default, but you may 
 # include it here if you wish to specify a particular version
 conda_dependencies = [
-  "python<3.12",  
+  "python==3.11",  
   "gdal", 
   "geotiff>=1.7.3"  # earlier versions don't support space in CONDA_PREFIX
 ]
