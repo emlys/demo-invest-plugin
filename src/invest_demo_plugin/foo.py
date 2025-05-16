@@ -114,4 +114,4 @@ def execute(args):
 
 @validation.invest_validator
 def validate(args, limit_to=None):
-    return validation.validate(args, MODEL_SPEC['args'])
+    return validation.validate(args, MODEL_SPEC)
