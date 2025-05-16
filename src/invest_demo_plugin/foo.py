@@ -14,8 +14,8 @@ from natcap.invest import spec
 LOGGER = logging.getLogger(__name__)
 
 MODEL_SPEC = spec.ModelSpec(
-    model_id="foo",
-    model_title=gettext("Foo Model"),
+    model_id="demo",
+    model_title=gettext("Demo Plugin"),
     userguide='',
     input_field_order=[
         ['workspace_dir', 'results_suffix'],
