@@ -6,7 +6,6 @@ import taskgraph
 
 from natcap.invest import validation
 from natcap.invest import utils
-from natcap.invest import spec_utils
 from natcap.invest.unit_registry import u
 from natcap.invest import gettext
 from natcap.invest import spec
