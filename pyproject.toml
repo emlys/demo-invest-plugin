@@ -7,8 +7,8 @@ name = "invest-demo-plugin"
 version = "0.0.1"
 dependencies = [
   "pygeoprocessing", 
-  "taskgraph@git+https://github.com/natcap/taskgraph.git@main",
-  # "natcap.invest @ git+https://github.com/natcap/invest.git@feature/plugins"
+  "taskgraph",
+  "natcap.invest>=3.16.0a1"
 ]
 
 [tool.natcap.invest]
