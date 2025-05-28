@@ -6,8 +6,8 @@ build-backend = "setuptools.build_meta"
 name = "invest-demo-plugin"
 version = "0.0.1"
 dependencies = [
-  "taskgraph", 
   "pygeoprocessing", 
+  "taskgraph@git+https://github.com/natcap/taskgraph.git@main",
   # "natcap.invest @ git+https://github.com/natcap/invest.git@feature/plugins"
 ]
 
@@ -18,23 +18,6 @@ dependencies = [
 api_version = "v1"
 
 package_name = "invest_demo_plugin"
-
-# User-facing name of the plugin model that will be displayed in the workbench
-# Style guidelines:
-# - Capitalize using title case
-# - Use as short of a phrase as possible while still being unique
-# - Avoid redundant, unnecessary words such as "InVEST", "Model"
-model_title = "Demo Plugin"  
-
-# Model identifier used internally by invest
-# Style guidelines:
-# - Use snake case. A snake-cased version of the model_title is often a good choice
-# - Abbreviations are okay for long names (e.g. sdr)
-# - Avoid redundant, unnecessary words such as "invest", "model"
-# - Do not use a model_id that is already used by any core invest model
-# - This identifier should be unique. The workbench cannot have multiple plugins with the 
-#   same model_id installed at the same time.
-model_id = "demo"
 
 # List of conda dependencies to install into the plugin's conda env 
 # Only include dependencies that cannot be specified in project.dependencies because 

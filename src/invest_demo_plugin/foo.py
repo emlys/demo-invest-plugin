@@ -9,51 +9,72 @@ from natcap.invest import utils
 from natcap.invest import spec_utils
 from natcap.invest.unit_registry import u
 from natcap.invest import gettext
+from natcap.invest import spec
 
 LOGGER = logging.getLogger(__name__)
 
-MODEL_SPEC = {
-    "model_id": "foo",
-    "model_title": gettext("Foo Model"),
-    "pyname": "natcap.invest.foo",
-    "userguide": "foo.html",
-    "aliases": (),
-    "ui_spec": {
-        "order": [
-            ['workspace_dir', 'results_suffix'],
-            ['raster_path', 'factor']
-        ],
-        "hidden": ["n_workers"],
-        "forum_tag": 'foo',
-        "sampledata": {
-            "filename": "Foo.zip"
-        }
-    },
-    "args": {
-        "workspace_dir": spec_utils.WORKSPACE,
-        "results_suffix": spec_utils.SUFFIX,
-        "n_workers": spec_utils.N_WORKERS,
-        "raster_path": {
-            "name": "Input Raster",
-            "type": "raster",
-            "bands": {1: {"type": "number", "units": u.none}}
-        },
-        "factor": {
-            "name": "Multiplication Factor",
-            "type": "integer",
-            "expression": "value < 10"
-        }
-    },
-    "outputs": {
-        "result.tif": {
-            "about": "Raster multiplied by factor",
-            "bands": {1: {
-                "type": "number",
-                "units": u.none
-            }}
-        }
-    }
-}
+MODEL_SPEC = spec.ModelSpec(
+    model_id="demo",
+    model_title=gettext("Demo Plugin"),
+    userguide='',
+    input_field_order=[
+        ['workspace_dir', 'results_suffix'],
+        ['raster_path', 'factor']],
+    inputs=[
+        spec.DirectoryInput(
+            id="workspace_dir",
+            name=gettext("workspace"),
+            about=gettext(
+                "The folder where all the model's output files will be written. If "
+                "this folder does not exist, it will be created. If data already "
+                "exists in the folder, it will be overwritten."),
+            contents={},
+            must_exist=False,
+            permissions="rwx"
+        ),
+        spec.StringInput(
+            id="results_suffix",
+            name=gettext("file suffix"),
+            about=gettext(
+                "Suffix that will be appended to all output file names. Useful to "
+                "differentiate between model runs."),
+            required=False,
+            regexp="[a-zA-Z0-9_-]*"
+        ),
+        spec.NumberInput(
+            id="n_workers",
+            name=gettext("taskgraph n_workers parameter"),
+            about=gettext(
+                "The n_workers parameter to provide to taskgraph. "
+                "-1 will cause all jobs to run synchronously. "
+                "0 will run all jobs in the same process, but scheduling will take "
+                "place asynchronously. Any other positive integer will cause that "
+                "many processes to be spawned to execute tasks."),
+            units=None,
+            required=False,
+            expression="value >= -1",
+            hidden=True
+        ),
+        spec.SingleBandRasterInput(
+            id="raster_path",
+            name="Input Raster",
+            data_type=float,
+            units=None
+        ),
+        spec.IntegerInput(
+            id="factor",
+            name="Multiplication Factor"
+        )
+    ],
+    outputs=[
+        spec.SingleBandRasterOutput(
+            id="result.tif",
+            about="Raster multiplied by factor",
+            data_type=float,
+            units=None
+        )
+    ]
+)
 
 _OUTPUT_BASE_FILES = {
     'result': 'result.tif',
@@ -93,4 +114,4 @@ def execute(args):
 
 @validation.invest_validator
 def validate(args, limit_to=None):
-    return validation.validate(args, MODEL_SPEC['args'])
+    return validation.validate(args, MODEL_SPEC)
