@@ -18,8 +18,8 @@ dependencies = [
 api_version = "v1"
 
 # This is the importable package name of the plugin. It should match the name of the 
-# package directory. It is included here so that natcap.invest knows how to import the 
-# plugin. 
+# package directory. It MUST begin with "invest". It is included here so that 
+# natcap.invest knows how to import the plugin. 
 # This is distinct from the project.name defined above (these names are often the same, 
 # but don't have to be). Unlike the project.name, this name should not contain hyphens 
 # or other special characters because it will be used in an import statement.
