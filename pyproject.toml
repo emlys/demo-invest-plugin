@@ -28,7 +28,7 @@ package_name = "invest_demo_plugin"
 # include it here if you wish to specify a particular version
 conda_dependencies = [
   "python==3.13",  
-  "gdal", 
+  "gdal<3.11",  # missing libgdal.so issue happened with gdal 3.11
   "geotiff>=1.7.3"  # earlier versions don't support space in CONDA_PREFIX
 ]
 
