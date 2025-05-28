@@ -12,11 +12,17 @@ dependencies = [
 ]
 
 [tool.natcap.invest]
-# This is the plugin API version that this plugin uses
-# invest uses this to determine whether it can run this plugin
+# This is the plugin API version that this plugin uses.
+# invest uses this to determine whether it can run this plugin.
 # "v1" is the current and only version at this time
 api_version = "v1"
 
+# This is the importable package name of the plugin. It should match the name of the 
+# package directory. It is included here so that natcap.invest knows how to import the 
+# plugin. 
+# This is distinct from the project.name defined above (these names are often the same, 
+# but don't have to be). Unlike the project.name, this name should not contain hyphens 
+# or other special characters because it will be used in an import statement.
 package_name = "invest_demo_plugin"
 
 # List of conda dependencies to install into the plugin's conda env 
