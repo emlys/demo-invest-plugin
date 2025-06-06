@@ -1,2 +1,2 @@
-# demo-invest-plugin
-demo invest model plugin
+# invest-demo-plugin
+A minimal template of an InVEST plugin
